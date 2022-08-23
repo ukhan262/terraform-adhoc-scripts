@@ -17,7 +17,7 @@ jobs:
       - run: .github/workflows/scripts/cleanup.ps1
         shell: pwsh
       - name: Commit deletion files
-        if: always()
+        continue-on-error: true
         run: |
           git config --global user.name 'Umar Khan'
           git config --global user.email 'umarkhan252@gmail.com'
@@ -39,7 +39,7 @@ jobs:
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
       - name: Commit Workspaces
-        if: always()
+        continue-on-error: true
         run: |
           git config --global user.name 'Umar Khan'
           git config --global user.email 'umarkhan252@gmail.com'
@@ -57,7 +57,7 @@ jobs:
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
       - name: Commit Workspaces Detailed Data
-        if: always()
+        continue-on-error: true
         run: |
           git config --global user.name 'Umar Khan'
           git config --global user.email 'umarkhan252@gmail.com'
