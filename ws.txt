@@ -1,7 +1,0 @@
-
-$_.attributes.name
-------------------
-testing
-vcs-test
-github-tfe-mgmt
-
