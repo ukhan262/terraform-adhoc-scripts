@@ -8,6 +8,29 @@ on:
   workflow_dispatch:
 
 jobs:
+  pre-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls
+        shell: pwsh
+      - run: |
+          if (test-path ws.txt){
+            write-host "removing file"
+            remove-item ws.txt
+          }
+          if (test-path tfresponse.json) {
+            write-host "removing file"
+            remove-item tfresponse.json
+          }
+      - name: Commit deletion files
+        run: |
+          git config --global user.name 'Umar Khan'
+          git config --global user.email 'umarkhan252@gmail.com'
+          git add .
+          git commit -m "Automated PS check in"
+          git push
+
   ps-api-call-terraform:
     runs-on: ubuntu-latest
     steps:
