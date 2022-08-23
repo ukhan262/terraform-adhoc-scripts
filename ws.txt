@@ -1,6 +1,6 @@
 
-$_.attributes.name
-------------------
+wsname
+------
 testing
 vcs-test
 github-tfe-mgmt
