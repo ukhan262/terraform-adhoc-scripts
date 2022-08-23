@@ -20,6 +20,13 @@ jobs:
           .github/workflows/scripts/tfeworkspaces.ps1
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
+      - name: Commit Workspaces
+        run: |
+          git config --global user.name 'Umar Khan'
+          git config --global user.email 'umarkhan252@gmail.com'
+          git add .
+          git commit -m "Automated PS check in"
+          git push
   
   bash-api-call-terraform:
     needs: ps-api-call-terraform
@@ -30,10 +37,10 @@ jobs:
         run: bash .github/workflows/scripts/tfworkspaces.sh
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
-      - name: Commit report
+      - name: Commit Workspaces Detailed Data
         run: |
           git config --global user.name 'Umar Khan'
-          git config --global user.email 'ukhan4@humana.com'
+          git config --global user.email 'umarkhan252@gmail.com'
           git add .
-          git commit -m "Automated check in"
+          git commit -m "Automated SH check in"
           git push
