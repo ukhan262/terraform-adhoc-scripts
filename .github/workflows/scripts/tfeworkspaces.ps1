@@ -1,6 +1,4 @@
-param(
-    $tfetoken
-)
+$tfetoken = $Env:tfe_token
 $org = "technology-core"
 $Headers = @{
     Authorization  = "Bearer $tfetoken"
