@@ -8,6 +8,10 @@ $Headers = @{
 $baseUrl = "https://app.terraform.io/api/v2/organizations/$org/workspaces"
 
 
+if (test-path ws.txt){
+    write-host "removing file"
+    remove-item ws.txt
+}
 
 $body = @{
     "page[size]"   = "5"
@@ -15,5 +19,5 @@ $body = @{
 }
 
 $response = Invoke-RestMethod -Uri $baseUrl -Headers $Headers -Body $body
-$allWorkspaces = $response.data | select id;
-$allWorkspaces
+$allWorkspaces = $response.data | select @{Expression={$_.attributes.name}};
+$allWorkspaces >> ws.txt
