@@ -32,14 +32,14 @@ jobs:
       - uses: actions/checkout@v2
       - run: ls
         shell: pwsh
-      - name: terraform-api-calls
-        run: bash .github/workflows/scripts/tfworkspaces.sh
-        env:
-          tfe_token: ${{ secrets.TFE_TOKEN }}
-      - name: terraform-api-calls
+      - name: terraform-api-calls-ps
         shell: pwsh
         run: |
           .github/workflows/scripts/tfeworkspaces.ps1
+        env:
+          tfe_token: ${{ secrets.TFE_TOKEN }
+      - name: terraform-api-calls-bash
+        run: bash .github/workflows/scripts/tfworkspaces.sh
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
       - name: Commit Workspaces
