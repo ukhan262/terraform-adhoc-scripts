@@ -25,13 +25,17 @@ jobs:
           git commit -m "Automated PS check in"
           git push
 
-  ps-api-call-terraform:
+  api-call-terraform:
     needs: pre-job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: ls
         shell: pwsh
+      - name: terraform-api-calls
+        run: bash .github/workflows/scripts/tfworkspaces.sh
+        env:
+          tfe_token: ${{ secrets.TFE_TOKEN }}
       - name: terraform-api-calls
         shell: pwsh
         run: |
@@ -46,23 +50,4 @@ jobs:
           git config --global user.email 'umarkhan252@gmail.com'
           git add .
           git commit -m "Automated PS check in"
-          git push
-  
-  bash-api-call-terraform:
-    needs: ps-api-call-terraform
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: terraform-api-calls
-        run: bash .github/workflows/scripts/tfworkspaces.sh
-        env:
-          tfe_token: ${{ secrets.TFE_TOKEN }}
-      - name: Commit Workspaces Detailed Data
-        continue-on-error: true
-        run: |
-          git pull
-          git config --global user.name 'Umar Khan'
-          git config --global user.email 'umarkhan252@gmail.com'
-          git add .
-          git commit -m "Automated SH check in"
           git push
