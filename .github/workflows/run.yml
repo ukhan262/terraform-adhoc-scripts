@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: ls
+        shell: pwsh
       - name: terraform-api-calls
         shell: pwsh
         run: |
