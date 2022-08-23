@@ -1,3 +1,6 @@
+param(
+    $tfe_token
+)
 $org = "technology-core"
 $Headers = @{
     Authorization  = "Bearer $tfe_token"
