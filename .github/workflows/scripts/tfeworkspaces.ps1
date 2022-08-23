@@ -13,5 +13,5 @@ $body = @{
 }
 
 $response = Invoke-RestMethod -Uri $baseUrl -Headers $Headers -Body $body
-$allWorkspaces = $response.data | select @{Expression={$_.attributes.name}};
+$allWorkspaces = $response.data | select @{ Name="wsname";  Expression={$_.attributes.name} };
 $allWorkspaces >> ws.txt
