@@ -1,12 +1,7 @@
-org="humana_tfe"
-baseurl="https://automation.humana.com"
+org="technology-core"
+baseurl="https://app.terraform.io"
 workspacesUrl="$baseurl/api/v2/organizations/$org/workspaces"
 echo $workspacesUrl
-
-# workspaceData=$(curl "$workspacesUrl" \
-#   --header "Authorization: Bearer $tfe_token" \
-#   --header "Content-Type: application/vnd.api+json" | jq -r '.data[].attributes.name')
-# echo $workspaceData
 
 rm -f tfresponse.json
 echo "workspaceName | current-run | latest-run | current-state-version" >> tfresponse.json

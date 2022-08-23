@@ -8,15 +8,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  api-call-terraform:
-    runs-on: internal-ubuntu
+  ps-api-call-terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: terraform-api-calls
+        shell: pwsh
+        run: |
+          .github/workflows/scripts/tfworkspaces.ps1
+        env:
+          tfe_token: ${{ secrets.TFE_TOKEN }}
+  
+  bash-api-call-terraform:
+    needs: ps-api-call-terraform
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: terraform-api-calls
         run: bash .github/workflows/scripts/tfworkspaces.sh
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
-          gh_token: ${{ secrets.GH_TOKEN }}
       - name: Commit report
         run: |
           git config --global user.name 'Umar Khan'
