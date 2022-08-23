@@ -32,6 +32,7 @@ jobs:
           git push
 
   ps-api-call-terraform:
+    needs: pre-job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
