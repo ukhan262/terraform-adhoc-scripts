@@ -1,9 +1,9 @@
 param(
-    $tfe_token
+    $tfetoken
 )
 $org = "technology-core"
 $Headers = @{
-    Authorization  = "Bearer $tfe_token"
+    Authorization  = "Bearer $tfetoken"
     "Content-Type" = "application/vnd.api+json"
 }
 
