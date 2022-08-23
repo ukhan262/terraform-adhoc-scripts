@@ -1,0 +1,7 @@
+
+wsname
+------
+testing
+vcs-test
+github-tfe-mgmt
+
