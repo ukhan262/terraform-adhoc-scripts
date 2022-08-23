@@ -7,11 +7,16 @@ $Headers = @{
 
 $baseUrl = "https://app.terraform.io/api/v2/organizations/$org/workspaces"
 
-$body = @{
-    "page[size]"   = "5"
-    "page[number]" = "1"
+$i = 1
+for (($i -eq 1); $i -lt 5; $i++)
+{
+    $body = @{
+        "page[size]"   = "1"
+        "page[number]" = $i
+    }
+    $body
+    $response = Invoke-RestMethod -Uri $baseUrl -Headers $Headers -Body $body
+    $allWorkspaces = $response.data | select @{ Name="wsname";  Expression={$_.attributes.name} };
+    $allWorkspaces >> ws.txt
 }
 
-$response = Invoke-RestMethod -Uri $baseUrl -Headers $Headers -Body $body
-$allWorkspaces = $response.data | select @{ Name="wsname";  Expression={$_.attributes.name} };
-$allWorkspaces >> ws.txt
