@@ -12,10 +12,10 @@ ls
 cat ws.txt | while read workspace;
 do 
     echo $workspace
-    # api=$(curl \
-    # --header "Authorization: Bearer $tfe_token" \
-    # --header "Content-Type: application/vnd.api+json" \
-    # "$workspacesUrl/$workspace" | jq '.data.attributes.name, "|", .data.relationships."current-run".data, "|", .data.relationships."latest-run".data, "|", .data.relationships."current-state-version".data' )
+    api=$(curl \
+    --header "Authorization: Bearer $tfe_token" \
+    --header "Content-Type: application/vnd.api+json" \
+    "$workspacesUrl/$workspace" | jq '.data.attributes.name, "|", .data.relationships."current-run".data, "|", .data.relationships."latest-run".data, "|", .data.relationships."current-state-version".data' )
     
-    # echo $api >> tfresponse.json
+    echo $api >> tfresponse.json
 done
