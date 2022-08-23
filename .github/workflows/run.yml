@@ -41,6 +41,7 @@ jobs:
       - name: Commit Workspaces
         continue-on-error: true
         run: |
+          git pull
           git config --global user.name 'Umar Khan'
           git config --global user.email 'umarkhan252@gmail.com'
           git add .
