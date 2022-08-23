@@ -3,7 +3,7 @@ baseurl="https://app.terraform.io"
 workspacesUrl="$baseurl/api/v2/organizations/$org/workspaces"
 echo $workspacesUrl
 
-rm -f tfresponse.json
+
 echo "workspaceName | current-run | latest-run | current-state-version" >> tfresponse.json
 echo "----------------------------------------------------------" >> tfresponse.json
 
