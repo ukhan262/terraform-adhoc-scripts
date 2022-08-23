@@ -37,7 +37,7 @@ jobs:
         run: |
           .github/workflows/scripts/tfeworkspaces.ps1
         env:
-          tfe_token: ${{ secrets.TFE_TOKEN }
+          tfe_token: ${{ secrets.TFE_TOKEN }}
       - name: terraform-api-calls-bash
         run: bash .github/workflows/scripts/tfworkspaces.sh
         env:
