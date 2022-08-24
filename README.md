@@ -7,8 +7,8 @@ Then the file is output as ws.txt
 The bash script loops through workspace.txt file which is grep version of ws.txt and then gets the data for each workspace and outputs that to tfresponse.txt
 
 ## workflow
-The repo is cleaned up with files that will be created later
-PS script runs to generate the ws.txt
-bash command to grep ws.txt to workspaces.txt
-Bash script runs to get detailed information on all workspaces in a file tfresponse.txt
-The files are checked back into the repository
+* The repo is cleaned up with files that will be created later
+* PS script runs to generate the ws.txt
+* bash command to grep ws.txt to workspaces.txt
+* Bash script runs to get detailed information on all workspaces in a file tfresponse.txt
+* The files are checked back into the repository
