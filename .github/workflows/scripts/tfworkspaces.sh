@@ -2,8 +2,8 @@ workspacesUrl="$baseurl/$org/workspaces"
 echo $workspacesUrl
 
 
-echo "workspaceName | current-run | latest-run | current-state-version" >> tfresponse.json
-echo "----------------------------------------------------------" >> tfresponse.json
+echo "workspaceName | current-run | latest-run | current-state-version" >> tfresponse.txt
+echo "----------------------------------------------------------" >> tfresponse.txt
 
 # for workspace in $workspaceData
 cat workspaces.txt | while read workspace;
@@ -19,6 +19,6 @@ do
         --header "Content-Type: application/vnd.api+json" \
         "$workspacesUrl/$workspace" | jq '.data.attributes.name, "|", .data.relationships."current-run".data, "|", .data.relationships."latest-run".data, "|", .data.relationships."current-state-version".data' )
         
-        echo $api >> tfresponse.json
+        echo $api >> tfresponse.txt
     fi
 done
