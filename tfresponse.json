@@ -1,5 +1,0 @@
-workspaceName | current-run | latest-run | current-state-version
-----------------------------------------------------------
-"testing" "|" null "|" null "|" null
-"vcs-test" "|" { "id": "run-n5aWoSwaoFUx4DsN", "type": "runs" } "|" { "id": "run-n5aWoSwaoFUx4DsN", "type": "runs" } "|" null
-"github-tfe-mgmt" "|" { "id": "run-di8JyzvRJKd45FXf", "type": "runs" } "|" { "id": "run-di8JyzvRJKd45FXf", "type": "runs" } "|" { "id": "sv-yx3P94zJ8sgRihSe", "type": "state-versions" }
