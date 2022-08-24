@@ -11,7 +11,7 @@ ls
 # for workspace in $workspaceData
 cat ws.txt | while read workspace;
 do 
-    if [[ $workspace == 'wsname' ] || [ $workspace == '------' ]];
+    if [[ "$workspace" == "wsname" ] || [ "$workspace" == "------" ]];
     then
         echo "not a workspace"
     else
