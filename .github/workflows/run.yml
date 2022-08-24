@@ -41,11 +41,16 @@ jobs:
           tfe_token: ${{ secrets.TFE_TOKEN }}
           org: "technology-core"
           baseurl: "https://app.terraform.io/api/v2/organizations"
+
       - run: grep . ws.txt > workspaces.txt
+
       - name: terraform-api-calls-bash
         run: bash .github/workflows/scripts/tfworkspaces.sh
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
+          org: "technology-core"
+          baseurl: "https://app.terraform.io/api/v2/organizations"
+
       - name: Commit Workspaces
         continue-on-error: true
         run: |
@@ -53,5 +58,5 @@ jobs:
           git config --global user.name 'Umar Khan'
           git config --global user.email 'umarkhan252@gmail.com'
           git add .
-          git commit -m "Automated PS check in"
+          git commit -m "Automated check in"
           git push

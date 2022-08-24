@@ -1,6 +1,4 @@
-org="technology-core"
-baseurl="https://app.terraform.io"
-workspacesUrl="$baseurl/api/v2/organizations/$org/workspaces"
+workspacesUrl="$baseurl/$org/workspaces"
 echo $workspacesUrl
 
 
