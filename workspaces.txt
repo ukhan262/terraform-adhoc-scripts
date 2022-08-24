@@ -7,3 +7,12 @@ vcs-test
 wsname
 ------
 github-tfe-mgmt
+wsname
+------
+testing
+wsname
+------
+vcs-test
+wsname
+------
+github-tfe-mgmt
