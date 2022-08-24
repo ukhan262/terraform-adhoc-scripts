@@ -8,7 +8,7 @@ echo "workspaceName | current-run | latest-run | current-state-version" >> tfres
 echo "----------------------------------------------------------" >> tfresponse.json
 
 # for workspace in $workspaceData
-cat ws.txt | while read workspace;
+cat workspaces.txt | while read workspace;
 do 
     if [[ "$workspace" == "wsname" ]]; then
         echo "not a workspace"
