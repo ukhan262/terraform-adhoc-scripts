@@ -11,9 +11,10 @@ ls
 # for workspace in $workspaceData
 cat ws.txt | while read workspace;
 do 
-    if [[ "$workspace" == "wsname" ] || [ "$workspace" == "------" ]];
-    then
+    if [[ "$workspace" == "wsname" ]]; then
         echo "not a workspace"
+    elif [[ "$workspace" == "------" ]]; then
+        echo "lines in the file"
     else
         echo $workspace
         # api=$(curl \
