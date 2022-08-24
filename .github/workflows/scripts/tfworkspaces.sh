@@ -7,7 +7,6 @@ echo $workspacesUrl
 echo "workspaceName | current-run | latest-run | current-state-version" >> tfresponse.json
 echo "----------------------------------------------------------" >> tfresponse.json
 
-ls
 # for workspace in $workspaceData
 cat ws.txt | while read workspace;
 do 
@@ -15,8 +14,8 @@ do
         echo "not a workspace"
     elif [[ "$workspace" == "------" ]]; then
         echo "lines in the file"
-    elif [[ ! -z "$workspace" ]]; then
-        echo "empty line"
+    # elif [[ ! -z "$workspace" ]]; then
+    #     echo "empty line"
     else
         echo $workspace
         # api=$(curl \
