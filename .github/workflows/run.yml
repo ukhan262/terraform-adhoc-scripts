@@ -39,6 +39,8 @@ jobs:
           .github/workflows/scripts/tfeworkspaces.ps1
         env:
           tfe_token: ${{ secrets.TFE_TOKEN }}
+          org: "technology-core"
+          baseurl: "https://app.terraform.io/api/v2/organizations"
       - run: grep . ws.txt > workspaces.txt
       - name: terraform-api-calls-bash
         run: bash .github/workflows/scripts/tfworkspaces.sh

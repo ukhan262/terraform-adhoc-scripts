@@ -1,11 +1,12 @@
 $tfetoken = $Env:tfe_token
-$org = "technology-core"
+$org = $Env:org
+$baseUrl = $Env:baseurl
 $Headers = @{
     Authorization  = "Bearer $tfetoken"
     "Content-Type" = "application/vnd.api+json"
 }
 
-$baseUrl = "https://app.terraform.io/api/v2/organizations/$org/workspaces"
+$baseUrl = "$baseUrl/$org/workspaces"
 
 $i = 1
 for (($i -eq 1); $i -lt 5; $i++)
