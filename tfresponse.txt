@@ -1,0 +1,6 @@
+workspaceName | current-run | latest-run | current-state-version
+----------------------------------------------------------
+"app1-dev" "|" null "|" null "|" null
+"testing-workspace" "|" { "id": "run-HUTmh5A5no9qZ3nA", "type": "runs" } "|" { "id": "run-HUTmh5A5no9qZ3nA", "type": "runs" } "|" null
+"testing" "|" null "|" null "|" null
+"vcs-test" "|" { "id": "run-BGnx4m2r8Eyh2qFA", "type": "runs" } "|" { "id": "run-BGnx4m2r8Eyh2qFA", "type": "runs" } "|" null

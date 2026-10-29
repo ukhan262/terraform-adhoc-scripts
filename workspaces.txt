@@ -1,12 +1,12 @@
 wsname
 ------
-github-tfe-mgmt
+app1-dev
 wsname
 ------
 testing-workspace
 wsname
 ------
-vcs-test
+testing
 wsname
 ------
-testing
+vcs-test
